@@ -58,18 +58,18 @@ const PropertySchema = new Schema(
     },
     seller_info: {
       name: {
-        type: string,
+        type: String,
       },
       email: {
-        type: string,
+        type: String,
       },
       phone: {
-        type: string,
+        type: String,
       },
     },
     images: [
       {
-        type: string,
+        type: String,
       },
     ],
     is_Featured: {
