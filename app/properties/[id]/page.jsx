@@ -6,6 +6,7 @@ import PropertyHeaderImage from "@/components/PropertyHeaderImage";
 import Link from "next/link";
 import PropertyDetails from "@/components/PropertyDetails";
 import { FaArrowLeft } from "react-icons/fa";
+import Spinner from "@/components/Spinner";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -40,13 +41,7 @@ const PropertyPage = () => {
     fetchPropertyData();
   }, [id]);
 
-  if (loading) {
-    return (
-      <h1 className="text-center text-2xl font-bold mt-10">
-        Property Loading...
-      </h1>
-    );
-  }
+  if (loading) return <Spinner loading={loading} />;
 
   if (error)
     return <h1 className="text-center text-2xl font-bold mt-10">{error}</h1>;
